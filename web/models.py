@@ -43,6 +43,33 @@ class MyUserManager(UserManager):
 
         return self._create_user( mobile_no, email, password, **extra_fields)
 
+class Countries(models.Model):
+    id = models.AutoField(primary_key=True)
+    iso = models.CharField(max_length=2, blank=True, null=True)
+    country_name = models.CharField(max_length=255, blank=True, null=True)
+    nic_name = models.CharField(max_length=150, blank=True, null=True)
+    country_code = models.CharField(max_length=3, blank=True, null=True)
+    numcode = models.IntegerField(blank=True, null=True)
+    phonecode = models.IntegerField(blank=True, null=True)
+    status = models.CharField(max_length=20, blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    modified = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    class Meta:
+        db_table = "countries"
+
+class States(models.Model):
+    id = models.AutoField(primary_key=True)
+    country = models.ForeignKey(Countries)
+    state_code = models.CharField(max_length=2, blank=True, null=True)
+    state_name = models.CharField(max_length=255, blank=True, null=True)
+    status = models.CharField(max_length=20, blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    modified = models.DateTimeField(auto_now=True, blank=True, null=True)
+
+    class Meta:
+        db_table = "states"
+
 class MyUser(AbstractUser):
     """@Create auth_users tables"""
     country_code = models.CharField(max_length=5, blank=True,default='+1')
@@ -74,38 +101,13 @@ class MyUser(AbstractUser):
     class Meta:
         db_table = "auth_users"
 
-    class Countries(models.Model):
-        id = models.AutoField(primary_key=True)
-        iso = models.CharField(max_length=2, blank=True, null=True)
-        country_name = models.CharField(max_length=255, blank=True, null=True)
-        nic_name = models.CharField(max_length=150, blank=True, null=True)
-        country_code = models.CharField(max_length=3, blank=True, null=True)
-        numcode = models.IntegerField(blank=True, null=True)
-        phonecode = models.IntegerField(blank=True, null=True)
-        status = models.CharField(max_length=20, blank=True, null=True)
-        created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-        modified = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-        class Meta:
-            db_table = "countries"
 
-    class States(models.Model):
-        id = models.AutoField(primary_key=True)
-        country = models.ForeignKey(Countries)
-        state_code = models.CharField(max_length=2, blank=True, null=True)
-        state_name = models.CharField(max_length=255, blank=True, null=True)
-        status = models.CharField(max_length=20, blank=True, null=True)
-        created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-        modified = models.DateTimeField(auto_now=True, blank=True, null=True)
+class Statuses(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    modified = models.DateTimeField(auto_now=True, blank=True, null=True)
 
-        class Meta:
-            db_table = "states"
-
-    class Statuses(models.Model):
-        id = models.AutoField(primary_key=True)
-        name = models.CharField(max_length=255, blank=True, null=True)
-        created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-        modified = models.DateTimeField(auto_now=True, blank=True, null=True)
-
-        class Meta:
-            db_table = "statuses"
+    class Meta:
+        db_table = "statuses"
