@@ -1,9 +1,9 @@
 # URLconf
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
-from Administrator import views,users,properties
+from web import views
 from . import views,authentication
-from Administrator.forms import LoginAdminForm
+from web.forms import LoginForm
 
 urlpatterns = [
     url(r'^$', auth_views.login,

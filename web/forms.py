@@ -2,10 +2,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm,SetPasswordForm
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model, authenticate
-from Api.models import Properties, Statuses
 from django.http import HttpResponseRedirect
 from django.core.exceptions import ValidationError
-from RETI import util
+from kiwitech import util
 from django.conf import settings
 import requests
 from django.db.models import Q
