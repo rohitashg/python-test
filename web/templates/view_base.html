@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Welcome to test python</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}" rel="stylesheet" media="all"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body class="reti-login">
+{% block content %}
+{% endblock %}
+
+
+<!-- Start jsscript section -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{% static 'js/datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/CustomScrollbar.concat.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/validate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom_admin.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/mask.js' %}"></script>
+
+
+</body>
+
+</html>

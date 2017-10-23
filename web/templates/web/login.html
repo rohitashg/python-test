@@ -38,13 +38,13 @@
                                     <span class="error-text">{{form.password.errors.as_text}}</span>
                                     {% endif %}
                                 </div>
-                                <div class="col s12 remember-me clearfix">
-                                    <div class="check-remember">
-                                         {{form.remember_me}}
-                                        <label for="filled-in-box">Remember Me</label>
-                                    </div>
-                                   <a href="{% url 'admin_forgot_password' %}" class="forget-password">Forgot Password?</a>
-                                </div>
+                                <!--<div class="col s12 remember-me clearfix">-->
+                                    <!--<div class="check-remember">-->
+                                         <!--{{form.remember_me}}-->
+                                        <!--<label for="filled-in-box">Remember Me</label>-->
+                                    <!--</div>-->
+                                   <!--<a href="{% url 'admin_forgot_password' %}" class="forget-password">Forgot Password?</a>-->
+                                <!--</div>-->
                                 <div class="input-field col s12">
                                     <button class=" submit-btn" id="login_submit">Sign In</button>
                                 </div>

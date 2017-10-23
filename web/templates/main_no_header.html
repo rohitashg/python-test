@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Welcome to RETI</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet" media="all"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/datepicker.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" rel="stylesheet" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}" rel="stylesheet" media="all"/>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body class="">
+<nav class="navigation-wrapper">
+    <div class="nav-wrapper">
+        <div class="row">
+            <div class="col s2 m2 l1"><a id="logo-container" href="{% url 'user_dashboard' %}" title="Welcome to RETI"
+                                         class="brand-logo"><img src="{% static 'img/reti-logo.png' %}" class="reti-logo"
+                                                                 alt="Reti-Logo"
+                                                                 title="Welcome to RETI"></a></div>
+            <div class="col s10 m10 l11">
+                <div class="my-nav hide-on-med-and-down clearfix">
+                    <ul class="left">
+                        <li><a href="{% url 'admin_under_construction' %}?page=1" {% if menu_page == 'dashboard' %} class="active" {%
+                                else %} class="" {% endif %}><strong>Dashboard</strong></a></li>
+                        <li><a href="{% url 'user_dashboard' %}" {% if menu_page == 'users' %} class="active" {%
+                                else %} class="" {% endif %}><strong>Users</strong></a></li>
+                        <li>
+                            <div class="admin-search alert_temp">
+                                <div class="search-block">
+                                    <i class="icon-search"></i>
+                                    <input type="text" placeholder="Search">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="user-info">
+                        <!-- <figure class="user-profile-pic">
+                            <img src="../assets/img/admin-pic.jpg" alt="Admin-Photo" title="Welcome to Admin">
+                        </figure> -->
+                        <span class="icon-settings-icon" id="my-profile-id"></span>
+                        <div class="user-admin-details">
+                            <a class="user-name">Hello {{request.user.first_name|capfirst}}
+                                <small>(Admin)</small>
+                            </a>
+                            <a class="user-email">{{request.user.email}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+
+<div class="my-profile-overlay"></div>
+<div class="user-profile user-profile-popup admin-user-popup">
+    <div class="admin-popup-subheader clearfix">
+        <div class="left-admin-subheader">
+            <figure class="s-logo">
+                <img src="{% static 'img/reti-logo.png' %}" class="reti-logo" alt="Reti-Logo"
+                                        title="Welcome to RETI">
+            </figure>
+            <a href="#" class="user-name">Hello {{request.user.first_name|capfirst}}
+                <small>(Admin)</small>
+            </a>
+        </div>
+        <a href="/administrator/logout" class="admin-logout">Sign Out</a>
+    </div>
+    <div class="inner-white-box">
+        <div class="create-admin">
+            <div class="create-admin-header clearfix">
+                <strong class="admin-title">Create Sub-Admin</strong>
+                <small class="add-admin-title click-custom-modal add-admin alert_temp"><i class="plus-icon">+</i></small>
+            </div>
+        </div>
+        <div class="create-admin">
+            <article class="create-admin-content">
+                <h2>Jack Bowen</h2>
+                <span class="remove-text-btn">Remove</span>
+                <span>hackett.tina@diamond.org</span>
+                <div class="move-to-dashboard clearfix">
+                    <div class="switch">
+                        <label><input type="checkbox"><span class="lever"></span></label>
+                    </div>
+                    <a href="#" class="dashboard-link">Can View my Dashboard</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="custom-black-overlay"></div>-->
+<!--<div class="form-page add-form-size-large open-custom-modal">-->
+    <!--<a href="javascript:;" class="close-form-page close-notification">x</a>-->
+    <!--<h2>Create Sub-Admin</h2>-->
+    <!--<form>-->
+        <!--<div class="row">-->
+
+            <!--<div class="input-field  error col s12">-->
+                <!--<input type="text" value="" class="validate">-->
+                <!--<label>First Name</label>-->
+                <!--<span class="error-text">Please enter only letters and numbers</span>-->
+            <!--</div>-->
+            <!--<div class="input-field error col s12">-->
+                <!--<input type="text" value="" class="validate">-->
+                <!--<label>Last Name</label>-->
+                <!--<span class="error-text">Please enter only letters and numbers</span>-->
+            <!--</div>-->
+            <!--<div class="input-field error  col s12">-->
+                <!--<input type="email" value="" class="validate">-->
+                <!--<label>Email Address</label>-->
+                <!--<span class="error-text">Please enter valid email address.</span>-->
+            <!--</div>-->
+            <!--<div class="input-field error  col s12">-->
+                <!--<input type="text" value="" class="validate">-->
+                <!--<label>Phone Number</label>-->
+                <!--<span class="error-text">mobile number already exits</span>-->
+            <!--</div>-->
+            <!--<div class="input-field   col s12">-->
+                <!--<input type="password" value="" class="validate">-->
+                <!--<label>Password</label>-->
+
+            <!--</div>-->
+            <!--<div class="input-field  col s12">-->
+                <!--<input type="password" value="" class="validate">-->
+                <!--<label>Confirm Password</label>-->
+
+            <!--</div>-->
+            <!--<div class="input-field  col s12">-->
+                <!--<div class="move-to-dashboard clearfix">-->
+                    <!--<div class="switch">-->
+                        <!--<label><input type="checkbox"><span class="lever"></span></label>-->
+                    <!--</div>-->
+                    <!--<span class="dashboard-link">Can View my Dashboard</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="form-page-button clearfix">-->
+            <!--<a href="javascript:;" class="cancel-button-link close-notification">Cancel</a>-->
+            <!--<button class="add-button-link">CREATE</button>-->
+        <!--</div>-->
+
+    <!--</form>-->
+<!--</div>-->
+
+<!-- Start jsscript section -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{% static 'js/datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/CustomScrollbar.concat.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/live.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/validate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom_admin.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/numberFormate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/mask.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jcrop.js' %}"></script>
+
+<script>
+
+		  // RETI Custom Select box
+$('select.reti-custom-selectbox').each(function () {
+
+    // Cache the number of options
+    var $this = $(this),
+        numberOfOptions = $(this).children('option').length;
+
+
+    // Hides the select element
+    $this.addClass('s-hidden');
+
+    // Wrap the select element in a div
+    $this.wrap('<div class="select"></div>');
+
+    // Insert a styled div to sit over the top of the hidden select element
+    $this.after('<div class="styledSelect"></div>');
+
+    // Cache the styled div
+    var $styledSelect = $this.next('div.styledSelect');
+
+    // Show the first select option in the styled div
+    $styledSelect.text($this.children('option').eq(0).text());
+
+    // Insert an unordered list after the styled div and also cache the list
+    var $list = $('<ul />', {
+        'class': 'options'
+    }).insertAfter($styledSelect);
+
+    // Insert a list item into the unordered list for each select option
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+
+    // Cache the list items
+    var $listItems = $list.children('li');
+
+    // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
+    $styledSelect.click(function (e) {
+        e.stopPropagation();
+        $('div.styledSelect.active').each(function () {
+            $(this).removeClass('active').next('ul.options').hide();
+        });
+        $(this).toggleClass('active').next('ul.options').toggle();
+    });
+
+    // Hides the unordered list when a list item is clicked and updates the styled div to show the selected list item
+    // Updates the select element to have the value of the equivalent option
+    $listItems.click(function (e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $listItems.removeClass('current');
+        $(this).addClass('current');
+        $list.hide();
+        /* alert($this.val()); Uncomment this for demonstration! */
+    });
+
+    // Hides the unordered list when clicking outside of it
+    $(document).click(function () {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});
+
+</script>
+</body>
+
+</html>
