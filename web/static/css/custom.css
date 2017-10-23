@@ -1,0 +1,210 @@
+.input-field span.error-text{
+	display:block;
+}
+
+ #new_password1-error , #NewPassword-error{
+    left: 0;
+    position: relative;
+    text-align: right;
+    top: -20px;
+    width: 100%;
+    right: 0.75rem;
+    display: block;
+
+    /*position: unset;*/
+}
+ #new_password1-error{
+     min-height:40px;
+ }
+#assign_seller,#assign_agent{
+    display:inline-block;
+    cursor: pointer;
+}
+
+ul.dropdown-content.select-dropdown li.selected span {
+    color: #26a69a;
+}
+
+.disable_a_href{
+    pointer-events: none;
+}
+
+.popup-custome{
+    margin-left:23% !important
+}
+.ui-autocomplete_jq {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    border:0;
+    position:absolute;
+    border-radius: 4px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.13);
+    background:#fff;
+    z-index:1050;
+  }
+  .ui-autocomplete_jq  .ui-menu-item{
+    
+    background:none;
+    border-top:1px solid #f7f7f7;
+
+  }
+  .ui-autocomplete_jq  .ui-menu-item:first-child{
+    border-top:none;
+  }
+  .ui-autocomplete_jq  .ui-menu-item:hover,.ui-autocomplete_jq  .ui-menu-item:focus{
+    background:none;
+    border-color:#f7f7f7;
+  }
+
+   .ui-autocomplete_jq  .ui-menu-item a{
+    color: #8ca4af;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px;
+    font-family:"Muli",sans-serif;
+    line-height:1.4;
+    cursor:pointer;
+    display:block;
+   }
+   .ui-autocomplete_jq  .ui-menu-item a:hover,.ui-autocomplete_jq  .ui-menu-item a:focus{
+    background:#fff;
+    color:#23a675;
+    
+    border-color:#f7f7f7;
+   }
+   .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
+    background:none;
+    border:none;
+   }
+   .ui-menu .ui-menu-item a.ui-state-focus, .ui-menu .ui-menu-item a.ui-state-active{
+    margin:0;
+   }
+
+.ui-helper-hidden-accessible{
+ display:none;
+}
+
+
+
+/*.user-data .dropdown-content{  right: 0 !important; top: 8px !important;}*/
+.upload-file-error-msg{}
+.upload-file-error-msg #file-error-sms{ position:absolute; top:-20px; color:red; line-height:18px;}
+
+/*
+#map div .gm-style-pbc + div + div   div + div + div + div > div{ }*/
+
+.map-location-text p{
+    margin-top:0;
+    line-height:1;
+}
+.add-button-link.disabled-state{
+    background:#ecf1f3; color:#b0bbc0;
+}
+.add-button-link.enabled-btn{
+    color:#fff;
+    background: -moz-linear-gradient(left, #2eaf71 0%, #22897f 100%);
+	background: -webkit-linear-gradient(left, #2eaf71 0%,#22897f 100%);
+	background: linear-gradient(to right, #2eaf71 0%,#22897f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2eaf71', endColorstr='#22897f',GradientType=1 );
+    color:#fff;
+}
+
+input[type=text]:disabled{
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
+    border-bottom: 2px solid #efefef;
+    height: 3.6rem;
+    font-size: 17px;
+    font-weight: 600;
+    color: #344750;
+    box-shadow: none;
+}
+
+.datepicker table tr td.today,.datepicker table tr td.day:hover, .datepicker table tr td.day.focused, .datepicker table tr td.today:hover, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover{
+background: #2eaf71;
+	background: -moz-linear-gradient(left, #2eaf71 0%, #22897f 100%);
+	background: -webkit-linear-gradient(left, #2eaf71 0%,#22897f 100%);
+	background: linear-gradient(to right, #2eaf71 0%,#22897f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2eaf71', endColorstr='#22897f',GradientType=1 );
+    color:#fff;
+}
+.datepicker table tr td.today:hover:hover{ color:#fff;}
+.datepicker table tr td.today.active:hover{ color:#23b288;}
+#filterform{height:100%;}
+.user-data .dropdown-content li{
+    position:relative;
+}
+.user-data .dropdown-content li .choose-upload-image{
+    cursor: pointer;
+    height: 1px;
+    left: 0;
+
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 1px;
+}
+
+.upload-user-photo-edit .choose-upload-image{
+    cursor: pointer;
+    height: 1px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 1px;
+}
+.hide-input-file{
+    overflow:hidden;
+    width:40px;
+    height:40px;
+    position:absolute;
+    left:0;
+    top:0;
+
+}
+
+
+.upload-user-photo-edit .hide-input-file .choose-upload-image{
+    width:100%;
+    height:100%;
+}
+
+
+
+.upload-user-photo-edit .edit-btn-icon{
+    z-index:10;
+}
+
+.upload-file-error-msg{
+    left: 0;
+    line-height: 16px;
+    position: absolute;
+    top:114px;
+    width: 163px;
+      font-size: 13px;
+     font-weight: 600;
+    color: #ff3f57;
+}
+
+.content-load-overlay.searching-list-data.event-loader{
+    left: auto;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 415px;
+    z-index: 9999;
+}
+
+.content-load-overlay.searching-list-data.event-loader .default-loader{
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
