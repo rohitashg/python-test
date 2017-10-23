@@ -137,3 +137,6 @@ STATIC_URL = '/static/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/comman/seprate_redirect'
+
+MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/'
